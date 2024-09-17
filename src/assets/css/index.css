@@ -1,3 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.remove-arrow {
+    -moz-appearance: textfield;
+}
+
+.prevent-select {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@font-face {
+  font-family: 'helvetica';
+  src: '/fonts/helvetica.ttf' format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+.font-helvetica{
+  font-family: 'helvetica', sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+/* Aeonik Family */
+@font-face {
+  font-family: aeonik;
+  src: '/fonts/Aeonik/Aeonik-Regular.ttf';
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+::selection{
+  background-color: #252323; /* Set the background color */
+  color: #ffffff; /* Set the text color */
+}
+
+@font-face {
+  font-family: inter;
+  src: '/fonts/Inter.ttf' format('truetype');
+  font-weight: 1 999; /* Define font weight range */
+  font-style: normal;
+  font-display: fallback;
+}
+
+
+.font-aeonik {
+  font-family: aeonik, sans-serif;
+}
+
+
+.font-inter {
+  font-family: inter, sans-serif;
+}
+
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
