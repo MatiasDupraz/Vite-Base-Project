@@ -1,6 +1,6 @@
-import React from "react";
+import React, { lazy } from "react";
 // Components
-import AutoCardSlider from "./AutoCardSlider.jsx";
+const AutoCardSlider = lazy(() => import("./AutoCardSlider.jsx"));
 
 // Libraries
 import { useMediaQuery } from "@react-hook/media-query";

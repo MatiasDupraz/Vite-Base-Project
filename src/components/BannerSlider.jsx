@@ -1,7 +1,7 @@
 //This component receives as parameter a list of images and creates an auto banner slider
-import React from "react";
+import React, { lazy } from "react";
 
-import Slider from "react-slick";
+const Slider = lazy(() => import("react-slick"));
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

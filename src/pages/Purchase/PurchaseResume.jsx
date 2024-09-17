@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, lazy } from "react";
 import axios from "axios";
 import { useUser } from "../../context/sessionContext";
-import LoggedOut from "../../components/LoggedOut";
 import useTextCapitalize from "../../hooks/text-capitalize";
 import usePriceFormating from "../../hooks/price-formating";
 import { format } from "@formkit/tempo";
+
+const LoggedOut = lazy(() => import("../../components/LoggedOut"));
 
 const PurchaseResume = () => {
   window.scrollTo(0, 0);

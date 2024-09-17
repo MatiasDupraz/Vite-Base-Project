@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import { useState, lazy } from "react";
 import "./stepper.css";
-import { TiTick } from "react-icons/ti";
+
+const TiTick = lazy(() =>
+  import("react-icons/ti").then((module) => ({ default: module.TiTick }))
+);
 const Stepper = ({ step }) => {
   const steps = ["Resumen", "Envío", "Contacto", "Pago"];
   const [currentStep, setCurrentStep] = useState(step);

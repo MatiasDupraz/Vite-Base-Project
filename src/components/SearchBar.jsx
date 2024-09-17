@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Icon from "./Icon";
+import { useState } from "react";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
+import { lazy } from "react";
+
+const Icon = lazy(() => import("./Icon"));
 
 const SearchBar = ({ className, buttonClassName, ...props }) => {
   const navigate = useNavigate();

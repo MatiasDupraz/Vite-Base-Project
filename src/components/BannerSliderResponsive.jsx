@@ -1,6 +1,7 @@
-import BannerSlider from "./BannerSlider";
+import React, { lazy, useEffect, useState } from "react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+const BannerSlider = lazy(() => import("./BannerSlider"));
 
 const BannerSliderResponsive = () => {
   const [banners, setBanners] = useState();

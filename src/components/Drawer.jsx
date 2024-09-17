@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
-import CategoriesParent from "./CategoriesParent";
+import { useEffect, useState } from "react";
+import { lazy } from "react";
 import classNames from "classnames";
+
+const CategoriesParent = lazy(() => import("./CategoriesParent"));
 
 //-translate-x-full
 const Drawer = ({ categories, display }) => {

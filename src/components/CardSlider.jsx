@@ -1,7 +1,7 @@
 //This component receives as parameter a list of products and creates a manual card slider
 
-import React from "react";
-import ProductCard from "./ProductCard";
+import React, { lazy } from "react";
+const ProductCard = lazy(() => import("./ProductCard"));
 
 const CardSlider = ({ products }) => {
   const slider = products.map((product, index) => {

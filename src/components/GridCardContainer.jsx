@@ -1,7 +1,7 @@
-import ProductCard from "./ProductCard";
 import classNames from "classnames";
 import { useNavigate, useLocation } from "react-router-dom";
 
+const ProductCard = lazy(() => import("./ProductCard"));
 //This component receives a list of product objects, asigns a card to each product, and creates a grid to display them
 
 const GridCardContainer = ({ products, pages, className, cardClassName }) => {

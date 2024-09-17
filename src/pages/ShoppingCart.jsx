@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, lazy } from "react";
 import axios from "axios";
-import ShoppingCartCard from "../components/ShoppingCartCard";
 import { useUser } from "../context/sessionContext";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import usePriceFormating from "../hooks/price-formating";
-import LoggedOut from "../components/LoggedOut";
+
+const ShoppingCartCard = lazy(() => import("../components/ShoppingCartCard"));
+const LoggedOut = lazy(() => import("../components/LoggedOut"));
+
 const ShoppingCart = () => {
   window.scrollTo(0, 0);
   const [products, setProducts] = useState([]);

@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import Stepper from "../../components/Stepper/Stepper";
+import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Notification from "../../components/Notification";
 import { useUser } from "../../context/sessionContext";
-import Icon from "../../components/Icon";
-import LoggedOut from "../../components/LoggedOut";
+import { lazy } from "react";
+
+const Stepper = lazy(() => import("../../components/Stepper/Stepper"));
+const Notification = lazy(() => import("../../components/Notification"));
+const Icon = lazy(() => import("../../components/Icon"));
+const LoggedOut = lazy(() => import("../../components/LoggedOut"));
 
 const ContactInfo = () => {
   const [errors, setErrors] = useState({});

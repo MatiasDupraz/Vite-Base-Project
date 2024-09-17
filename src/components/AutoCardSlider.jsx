@@ -1,9 +1,9 @@
 //This component receives as parameter a list of products and creates an auto card slider
 
-import React from "react";
-import ProductCard from "./ProductCard";
+import React, { lazy, Suspense } from "react";
+const ProductCard = lazy(() => import("./ProductCard"));
+const Slider = lazy(() => import("react-slick"));
 
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

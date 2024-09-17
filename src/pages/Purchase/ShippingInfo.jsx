@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import Stepper from "../../components/Stepper/Stepper";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
-import Icon from "../../components/Icon";
 import axios from "axios";
 import { useUser } from "../../context/sessionContext";
-import Notification from "../../components/Notification";
 import usePriceFormating from "../../hooks/price-formating";
-import LoggedOut from "../../components/LoggedOut";
+
+const Stepper = React.lazy(() => import("../../components/Stepper/Stepper"));
+const Icon = React.lazy(() => import("../../components/Icon"));
+const Notification = React.lazy(() => import("../../components/Notification"));
+const LoggedOut = React.lazy(() => import("../../components/LoggedOut"));
 
 const ShippingInfo = () => {
   const navigate = useNavigate();

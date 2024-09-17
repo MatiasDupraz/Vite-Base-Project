@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 import classNames from "classnames";
-import Icon from "./Icon";
-import useTextFormating from "../hooks/long-text-formating";
 import axios from "axios";
 import { useUser } from "../context/sessionContext";
-import usePriceFormating from "../hooks/price-formating";
+
+const useTextFormating = lazy(() => import("../hooks/long-text-formating"));
+const usePriceFormating = lazy(() => import("../hooks/price-formating"));
 const ShoppingCartCard = ({
   ID,
   name,

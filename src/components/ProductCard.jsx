@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import classNames from "classnames";
-import usePriceFormating from "../hooks/price-formating";
-import useTextFormating from "../hooks/long-text-formating";
-import useTextCapitalize from "../hooks/text-capitalize";
+import React, { lazy } from "react";
+
+const usePriceFormating = lazy(() => import("../hooks/price-formating"));
+const useTextFormating = lazy(() => import("../hooks/long-text-formating"));
+const useTextCapitalize = lazy(() => import("../hooks/text-capitalize"));
 const ProductCard = ({ title, price, images, ID, className }) => {
   const [isHovered, setIsHovered] = useState(false);
 

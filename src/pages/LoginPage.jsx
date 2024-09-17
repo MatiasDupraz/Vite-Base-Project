@@ -1,13 +1,11 @@
-import React, { useRef, useState } from "react";
-
-import { Link } from "react-router-dom";
+import { useRef, useState, lazy } from "react";
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
-import GoogleLogin from "../lib/GoogleLogin";
 import axios from "axios";
 import { useUser } from "../context/sessionContext";
-import { useNavigate } from "react-router-dom";
-import Notification from "../components/Notification";
-import Icon from "../components/Icon";
+
+const GoogleLogin = lazy(() => import("../lib/GoogleLogin"));
+const Notification = lazy(() => import("../components/Notification"));
 
 const LoginPage = () => {
   window.scrollTo(0, 0);

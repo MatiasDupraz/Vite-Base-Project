@@ -1,5 +1,5 @@
-import React from "react";
-import Icon from "./Icon";
+import React, { lazy } from "react";
+const Icon = lazy(() => import("./Icon"));
 
 const ChatButton = () => {
   const handleSubmit = () => {

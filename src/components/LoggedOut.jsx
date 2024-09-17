@@ -1,7 +1,8 @@
-import React from "react";
+import { lazy } from "react";
 import classNames from "classnames";
-import Icon from "./Icon";
 import { Link } from "react-router-dom";
+
+const Icon = lazy(() => import("./Icon"));
 
 const LoggedOut = () => {
   const noProductClassName = classNames("block pt-[250px] mb-64");

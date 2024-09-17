@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import Icon from "./Icon";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import axios from "axios";
+
+const Icon = lazy(() => import("./Icon"));
 
 const Categories = ({ state, categoriesInput }) => {
   const [categories, setCategories] = useState([]);

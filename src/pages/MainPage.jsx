@@ -1,11 +1,13 @@
-//library
-import React, { useEffect, useState } from "react";
-
-import BannerSliderResponsive from "../components/BannerSliderResponsive";
+import { useEffect, useState, lazy } from "react";
 import axios from "axios";
 
-import AutoCardSliderResponsive from "../components/AutoCardSliderResponsive";
-import SectionTitle from "../components/SectionTitle";
+const BannerSliderResponsive = lazy(() =>
+  import("../components/BannerSliderResponsive")
+);
+const AutoCardSliderResponsive = lazy(() =>
+  import("../components/AutoCardSliderResponsive")
+);
+const SectionTitle = lazy(() => import("../components/SectionTitle"));
 
 function MainPage() {
   window.scrollTo(0, 0);

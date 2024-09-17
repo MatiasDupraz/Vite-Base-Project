@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import { Toaster } from "react-hot-toast";
-
 import { useData } from "./context/dataContext.jsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import MainPage from "./pages/MainPage.jsx";
-
-//For all pages
+// Components used in all pages
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import ChatButton from "./components/ChatButton.jsx";
 
-//Filters and detail
-import TextFilteredProducts from "./pages/TextFilteredProducts.jsx";
-import CategoryFilteredProducts from "./pages/CategoryFilteredProducts.jsx";
-import ProductDetail from "./pages/ProductDetail.jsx";
-
-//User Pages
-import LoginPage from "./pages/LoginPage.jsx";
-import RegisterPage from "./pages/RegisterPage.jsx";
-
-//Cart and Purchase Pages
-import CartResume from "./pages/Purchase/CartResume.jsx";
-import ShoppingCart from "./pages/ShoppingCart.jsx";
-import ShippingInfo from "./pages/Purchase/ShippingInfo.jsx";
-import ContactInfo from "./pages/Purchase/ContactInfo.jsx";
-import PaymentMethods from "./pages/Purchase/PaymentMethods.jsx";
-import Promotions from "./pages/Purchase/Promotions.jsx";
-import PurchaseResume from "./pages/Purchase/PurchaseResume.jsx";
-import PurchaseResumes from "./pages/PurchaseResumes.jsx";
-import UserOrders from "./pages/UserOrders";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import ModoCheckout from "./components/MODO/ModoCheckout.jsx";
+// Lazy load other components
+const MainPage = lazy(() => import("./pages/MainPage.jsx"));
+const TextFilteredProducts = lazy(() =>
+  import("./pages/TextFilteredProducts.jsx")
+);
+const CategoryFilteredProducts = lazy(() =>
+  import("./pages/CategoryFilteredProducts.jsx")
+);
+const ProductDetail = lazy(() => import("./pages/ProductDetail.jsx"));
+const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage.jsx"));
+const CartResume = lazy(() => import("./pages/Purchase/CartResume.jsx"));
+const ShoppingCart = lazy(() => import("./pages/ShoppingCart.jsx"));
+const ShippingInfo = lazy(() => import("./pages/Purchase/ShippingInfo.jsx"));
+const ContactInfo = lazy(() => import("./pages/Purchase/ContactInfo.jsx"));
+const PaymentMethods = lazy(() =>
+  import("./pages/Purchase/PaymentMethods.jsx")
+);
+const Promotions = lazy(() => import("./pages/Purchase/Promotions.jsx"));
+const PurchaseResume = lazy(() =>
+  import("./pages/Purchase/PurchaseResume.jsx")
+);
+const PurchaseResumes = lazy(() => import("./pages/PurchaseResumes.jsx"));
+const UserOrders = lazy(() => import("./pages/UserOrders"));
+const ModoCheckout = lazy(() => import("./components/MODO/ModoCheckout.jsx"));
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -53,6 +54,7 @@ function App() {
     <Router>
       <Toaster position="top-center" />
 
+      {/*<NavBar categories={categories} />*/}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/cart" element={<ShoppingCart />} />

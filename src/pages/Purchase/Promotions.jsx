@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+
 const Promotions = () => {
   window.scrollTo(0, 0);
   const promotionClassName = classNames(

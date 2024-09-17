@@ -1,14 +1,17 @@
-import React, { useRef, useState, useEffect } from "react";
-import Icon from "./Icon";
-import Categories from "./Categories";
-import SearchBar from "./SearchBar";
+import React, { useRef, useState, useEffect, lazy } from "react";
 import classNames from "classnames";
 import { useUser } from "../context/sessionContext";
 import { useLocation, Link } from "react-router-dom";
 import useTextCapitalize from "../hooks/text-capitalize";
-import { Squash } from "hamburger-react";
-import Drawer from "./Drawer";
 import axios from "axios";
+
+const Icon = lazy(() => import("./Icon"));
+const Categories = lazy(() => import("./Categories"));
+const SearchBar = lazy(() => import("./SearchBar"));
+const Squash = lazy(() =>
+  import("hamburger-react").then((module) => ({ default: module.Squash }))
+);
+const Drawer = lazy(() => import("./Drawer"));
 const NavBar = ({ categories }) => {
   const { user } = useUser();
   let location = useLocation().pathname;

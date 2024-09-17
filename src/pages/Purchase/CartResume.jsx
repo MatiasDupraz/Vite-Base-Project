@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-
-import Stepper from "../../components/Stepper/Stepper";
 import { useUser } from "../../context/sessionContext";
 import usePriceFormating from "../../hooks/price-formating";
-import LoggedOut from "../../components/LoggedOut";
 import axios from "axios";
+
+const Stepper = lazy(() => import("../../components/Stepper/Stepper"));
+const LoggedOut = lazy(() => import("../../components/LoggedOut"));
 
 const CartResume = () => {
   window.scrollTo(0, 0);

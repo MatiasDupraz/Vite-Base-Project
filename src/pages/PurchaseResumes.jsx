@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, lazy } from "react";
 import axios from "axios";
 import { useUser } from "../context/sessionContext";
-import LoggedOut from "../components/LoggedOut";
 import useTextCapitalize from "../hooks/text-capitalize";
 import usePriceFormating from "../hooks/price-formating";
 import { format } from "@formkit/tempo";
 import { useLocation, useNavigate } from "react-router-dom";
-import Icon from "../components/Icon";
+
+const LoggedOut = lazy(() => import("../components/LoggedOut"));
+const Icon = lazy(() => import("../components/Icon"));
 
 const PurchaseResumes = () => {
   window.scrollTo(0, 0);

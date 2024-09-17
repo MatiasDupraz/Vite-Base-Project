@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import googleIcon from "./../assets/icons/google.svg";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/sessionContext";
-import Notification from "../components/Notification";
+import { lazy } from "react";
+
+const Notification = lazy(() => import("../components/Notification"));
 export const GoogleLogin = () => {
   const [gUser, setGuser] = useState([]);
   const { setUser } = useUser();

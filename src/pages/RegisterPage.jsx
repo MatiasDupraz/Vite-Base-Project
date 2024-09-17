@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import classNames from "classnames";
-import GoogleLogin from "../lib/GoogleLogin";
-import axios from "axios";
+import { useRef, useState, lazy } from "react";
 import { useNavigate } from "react-router-dom";
-import Notification from "../components/Notification";
+import classNames from "classnames";
+import axios from "axios";
+
+const GoogleLogin = lazy(() => import("../lib/GoogleLogin"));
+const Notification = lazy(() => import("../components/Notification"));
 const RegisterPage = () => {
   window.scrollTo(0, 0);
   const [registered, setRegistered] = useState(false);

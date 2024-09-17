@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy } from "react";
 import classNames from "classnames";
-import Stepper from "../../components/Stepper/Stepper.jsx";
 import { useUser } from "../../context/sessionContext.jsx";
-import { Link, useNavigate } from "react-router-dom";
-import Notification from "../../components/Notification.jsx";
+import { useNavigate } from "react-router-dom";
 import usePriceFormating from "../../hooks/price-formating";
 import axios from "axios";
-import LoggedOut from "../../components/LoggedOut.jsx";
+
+const Stepper = lazy(() => import("../../components/Stepper/Stepper.jsx"));
+const Notification = lazy(() => import("../../components/Notification.jsx"));
+const LoggedOut = lazy(() => import("../../components/LoggedOut.jsx"));
+
 const PaymentMethods = () => {
   window.scrollTo(0, 0);
   const { user } = useUser();
